@@ -34,8 +34,6 @@ public class Seat {
     }
 
     public String toString() {
-        return "SeatID: "+ seatID + "\n" +
-                "Status: " + status + "\n" +
-                "Passenger: " + passenger + "\n";
+        return "Seat "+  + seatID + " is reserved. "  + "PassengerInfo: " + passenger;
     }
 }

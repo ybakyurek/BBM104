@@ -52,9 +52,6 @@ public class Phone {
 
     @Override
     public String toString() {
-        return  "CountryCode: "+ countryCode + "\n" +
-                "Code: " + code + "\n" +
-                "Number: " + number + "\n" +
-                "Type: " +  type;
+        return  type + " Phone: " +  countryCode + " " +"(" + code +") "+ number;
     }
 }

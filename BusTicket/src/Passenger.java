@@ -43,9 +43,7 @@ public class Passenger {
 
     @Override
     public String toString() {
-        return "Name: "+ name + "\n" +
-                "Surname: " + surname + "\n" +
-                "Gender: " + gender + "\n" +
-                "Phone: " +  phone ;
+        return name +" " + surname +
+                "(" + gender + ")"+"\t" +  phone ;
     }
 }
