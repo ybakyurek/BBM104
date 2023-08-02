@@ -1,18 +1,18 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         System.out.println("Welcome to BusTicket");
-        String menu = "1-Book a seat \n" +
-        "2-Cancel booking\n" +
-        "3-Print all passengers\n" +
-        "4-Print available seats\n" +
-        "5-Print all seats\n" +
-        "6-Search passenger\n" +
-        "7-Exit\n" +
-        "Please enter your choose:";
+        String menu = """
+                1-Book a seat\s
+                2-Cancel booking
+                3-Print all passengers
+                4-Print available seats
+                5-Print all seats
+                6-Search passenger
+                7-Exit
+                Please enter your choose:""";
         System.out.println(menu);
         Scanner scan = new Scanner(System.in);
         int value = 0;
@@ -20,32 +20,18 @@ public class Main {
         while(value!=7) {
             value = scan.nextInt();
             switch (value) {
-                case 1:
+                case 1 -> {
                     System.out.println("1");
-                    if (value==1) System.out.println("true");
+                    if (value == 1) System.out.println("true");
                     else System.out.println("false");
-                    break;
-                case 2:
-                    System.out.println("2");
-                    break;
-                case 3:
-                    System.out.println("3");
-                    break;
-                case 4:
-                    System.out.println("4");
-                    break;
-                case 5:
-                    System.out.println("5");
-                    break;
-                case 6:
-                    System.out.println("6");
-                    break;
-                case 7:
-                    System.out.println("You're welcome, thank you for choosing us.");
-                    break;
-                default:
-                    System.out.println("Please choose available number");
-                    break;
+                }
+                case 2 -> System.out.println("2");
+                case 3 -> System.out.println("3");
+                case 4 -> System.out.println("4");
+                case 5 -> System.out.println("5");
+                case 6 -> System.out.println("6");
+                case 7 -> System.out.println("You're welcome, thank you for choosing us.");
+                default -> System.out.println("Please choose available number");
             }
         }
 
