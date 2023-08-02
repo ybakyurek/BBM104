@@ -22,8 +22,7 @@ public class Main {
             switch (value) {
                 case 1 -> {
                     System.out.println("1");
-                    if (value == 1) System.out.println("true");
-                    else System.out.println("false");
+                    System.out.println("test");
                 }
                 case 2 -> System.out.println("2");
                 case 3 -> System.out.println("3");
