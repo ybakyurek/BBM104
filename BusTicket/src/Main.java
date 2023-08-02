@@ -1,4 +1,5 @@
 import java.sql.SQLOutput;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +13,40 @@ public class Main {
         "6-Search passenger\n" +
         "7-Exit\n" +
         "Please enter your choose:";
-        System.out.println("Please enter your choose");
+        System.out.println(menu);
+        Scanner scan = new Scanner(System.in);
+        int value = 0;
+
+        while(value!=7) {
+            value = scan.nextInt();
+            switch (value) {
+                case 1:
+                    System.out.println("1");
+                    break;
+                case 2:
+                    System.out.println("2");
+                    break;
+                case 3:
+                    System.out.println("3");
+                    break;
+                case 4:
+                    System.out.println("4");
+                    break;
+                case 5:
+                    System.out.println("5");
+                    break;
+                case 6:
+                    System.out.println("6");
+                    break;
+                case 7:
+                    System.out.println("You're welcome, thank you for choosing us.");
+                    break;
+                default:
+                    System.out.println("Please choose available number");
+                    break;
+            }
+        }
+
 
 
 
