@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("Welcome to BusTicket");
-        String menu = "1-Book a seat\n" +
+        String menu = "1-Book a seat \n" +
         "2-Cancel booking\n" +
         "3-Print all passengers\n" +
         "4-Print available seats\n" +
@@ -22,6 +22,8 @@ public class Main {
             switch (value) {
                 case 1:
                     System.out.println("1");
+                    if (value==1) System.out.println("true");
+                    else System.out.println("false");
                     break;
                 case 2:
                     System.out.println("2");
