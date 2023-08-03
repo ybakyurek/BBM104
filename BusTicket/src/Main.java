@@ -3,7 +3,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        //Simple Bus
         Bus bus = new Bus("06HUBM06", 42);
+
+        //Simple Passengers
         Passenger p = new Passenger("yildirim", "akyurek", "E",
                 new Phone("TR", "+90", 5322, "Mobile"));
         bus.bookSeat(p, 12);
@@ -27,6 +30,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int value = 0;
 
+        //Menu system always work until passenger choose 7
         while (value != 7) {
             System.out.print(menu);
             System.out.print("Please enter your choose: ");
@@ -46,6 +50,7 @@ public class Main {
                         }
                         else isSelected=true;
                     }
+
                     System.out.print("Enter your first name:");
                     String name = scan.nextLine();
                     System.out.print("Enter your surname:");
