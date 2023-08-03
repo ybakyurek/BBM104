@@ -3,17 +3,18 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Bus bus = new Bus("06HUBM06",42);
-        Passenger p = new Passenger("yildirim","akyurek","E",
-                new Phone("TR","+90",5322,"Mobile"));
-        bus.bookSeat(p,12);
-        Passenger p2 = new Passenger("asd","asd","E",
-                new Phone("TR","+90",5121,"Mobile"));
-        bus.bookSeat(p2,15);
+        Bus bus = new Bus("06HUBM06", 42);
+        Passenger p = new Passenger("yildirim", "akyurek", "E",
+                new Phone("TR", "+90", 5322, "Mobile"));
+        bus.bookSeat(p, 12);
+        Passenger p2 = new Passenger("asd", "asd", "E",
+                new Phone("TR", "+90", 5121, "Mobile"));
+        bus.bookSeat(p2, 15);
 
 
         System.out.println("Welcome to BusTicket");
         String menu = """
+                **** MENU ****
                 1-Book a seat\s
                 2-Cancel booking
                 3-Print all passengers
@@ -26,18 +27,25 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int value = 0;
 
-        while(value!=7) {
-
+        while (value != 7) {
             System.out.print(menu);
             System.out.print("Please enter your choose: ");
             value = scan.nextInt();
             scan.nextLine();
-
             switch (value) {
                 case 1 -> {
                     System.out.print("Enter your seat number:");
                     int seatNumber = scan.nextInt();
                     scan.nextLine();
+                    boolean isSelected = false;
+                    while (!isSelected) {
+                        if (bus.getSeats()[seatNumber] != null) {
+                            System.out.println("Seat " + seatNumber + " is reserved. Please choose a new seat");
+                            seatNumber = scan.nextInt();
+                            scan.nextLine();
+                        }
+                        else isSelected=true;
+                    }
                     System.out.print("Enter your first name:");
                     String name = scan.nextLine();
                     System.out.print("Enter your surname:");
@@ -53,10 +61,8 @@ public class Main {
                     System.out.print("Enter your number:");
                     int number = scan.nextInt();
                     scan.nextLine();
-                    Passenger passenger = new Passenger(name,surname,gender,new Phone(countryCode,code,number,type));
-                    System.out.println(passenger);
-                    bus.bookSeat(passenger,seatNumber);
-
+                    Passenger passenger = new Passenger(name, surname, gender, new Phone(countryCode, code, number, type));
+                    bus.bookSeat(passenger, seatNumber);
                 }
                 case 2 -> {
                     System.out.print("Enter your seat number:");
@@ -64,7 +70,7 @@ public class Main {
                     scan.nextLine();
                     System.out.print("Enter your surname:");
                     String surname = scan.nextLine();
-                      bus.cancel(surname,seatNumber);
+                    bus.cancel(surname, seatNumber);
 
                 }
                 case 3 -> bus.printAllPassengers();
@@ -75,22 +81,13 @@ public class Main {
                     String name = scan.nextLine();
                     System.out.print("Enter your surname:");
                     String surname = scan.nextLine();
-                    bus.search(name,surname);
+                    bus.search(name, surname);
                 }
                 case 7 -> System.out.print("You're welcome, thank you for choosing us.");
                 default -> System.out.println("Please choose available number");
             }
         }
 
-
-
-
-
-
-
-//        Phone p = new Phone("TR",5322208,"Mobile");
-//        System.out.println(p.toString());
-//        Bus bus = new Bus("06HUBM06",42, new Seat[42]);
     }
 
 }
