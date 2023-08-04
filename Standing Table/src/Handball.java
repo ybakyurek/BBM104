@@ -5,6 +5,6 @@ public class Handball extends Sports{
 
     @Override
     public void calculatePoint() {
-
+        setP(getW()*2+getD());
     }
 }

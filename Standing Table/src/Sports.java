@@ -1,3 +1,5 @@
+import java.util.*;
+
 public abstract class Sports {
     private String name;
     /*
@@ -105,10 +107,40 @@ public abstract class Sports {
         W = (f > a) ? W + 1 : W;
         D = (f == a) ? D + 1 : D;
         L = (f < a) ? L + 1 : L;
-        F=f;
-        A=a;
-    }
+        F+=f;
+        A+=a;
+        GD += f-a;
+     }
 
     public abstract void calculatePoint();
 
+
+    /*
+    This part allows only the name of the object, not the whole object, to be kept unique in the HashSet.
+    Thus, we can maintain the teams as unique
+     */
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sports sports = (Sports) o;
+        return Objects.equals(name, sports.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
+    }
+
+
+    @Override
+    public String toString() {
+        return (String.format("%-20s %4d %4d %4d %4d %4d %4d %4d %4d", name, G, W, D, L, F, A, GD, P));
+    }
+
+
+
 }
+
+
