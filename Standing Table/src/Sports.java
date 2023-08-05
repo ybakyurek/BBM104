@@ -1,6 +1,6 @@
 import java.util.*;
 
-public abstract class Sports {
+public  class Sports implements Comparable<Sports>{
     private String name;
     /*
     G: Game
@@ -112,8 +112,6 @@ public abstract class Sports {
         GD += f-a;
      }
 
-    public abstract void calculatePoint();
-
 
     /*
     This part allows only the name of the object, not the whole object, to be kept unique in the HashSet.
@@ -140,7 +138,15 @@ public abstract class Sports {
     }
 
 
+    @Override
+    public int compareTo(Sports o) {
+        int scoreComparison = Integer.compare(o.getP(), this.getP());
+        if (scoreComparison != 0) {
+            return scoreComparison;
+        }
 
+        return Integer.compare(o.getGD(), this.getGD());
+    }
 }
 
 

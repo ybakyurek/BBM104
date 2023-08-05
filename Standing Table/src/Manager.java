@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.TreeSet;
 
 
 public class Manager {
@@ -10,7 +11,7 @@ public class Manager {
     public static HashSet<Sports> basketballs = new HashSet<>();
     public static HashSet<Sports> volleyballs = new HashSet<>();
 
-    public static String tableHeader = String.format("%-20s %4s %4s %4s %4s %4s %4s %4s %4s", "Name", "G", "W", "D", "L", "F", "A", "GD", "P");
+    public static String tableHeader = String.format("%-20s %4s %4s %4s %4s %4s %4s %4s %4s", "NAME", "G", "W", "D", "L", "F", "A", "GD", "P");
 
     public static void creatingTeams(String filePath) {
         IO.reading(filePath);
@@ -62,7 +63,6 @@ public class Manager {
                     if (i.getName().equals(away)) {
                         i.entryMatch(awayScore, homeScore);
                     }
-                    i.calculatePoint();
                 }
             }
         }
@@ -73,35 +73,28 @@ public class Manager {
         Manager.fillTableWithScores(Manager.volleyballs,"V");
         Manager.fillTableWithScores(Manager.basketballs,"B");
         Manager.fillTableWithScores(Manager.handballs,"H");
-
-        /*
-        for (String s : list) {
-            String home = s.split("\t")[1];
-            int homeScore = Integer.parseInt(s.split("\t")[3].split(":")[0]);
-            String away = s.split("\t")[2];
-            int awayScore = Integer.parseInt(s.split("\t")[3].split(":")[1]);
-
-            switch (s.split("\t")[0]) {
-                case "I" -> {
-
-                }
-                case "H" -> {
-
-
-                }
-                case "B" -> {
-
-
-                }
-                case "V" -> {
-
-
-                }
-            }
-        }
-*/
-
     }
+
+    public static void print(HashSet<Sports> sports, String gameType){
+        System.out.println(gameType);
+        System.out.println(Manager.tableHeader);
+        TreeSet<Sports> treeSet = new TreeSet<>(sports);
+        //print to the terminal
+        for (Sports s : treeSet) {
+            System.out.println(s);
+        }
+        System.out.println();
+
+        //printing to the txt
+        IO.writing(treeSet,gameType);
+    }
+    public static void printAll(){
+        print(volleyballs,"VOLLEYBALL");
+        print(basketballs,"BASKETBALL");
+        print(icehockeys,"ICEHOCKEY");
+        print(handballs,"HANDBALL");
+    }
+
 
 
 }

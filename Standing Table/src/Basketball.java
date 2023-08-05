@@ -4,7 +4,8 @@ public class Basketball extends Sports{
     }
 
     @Override
-    public void calculatePoint() {
+    public void entryMatch(int f, int a) {
+        super.entryMatch(f, a);
         setP(getW()*2+getL());
     }
 }
