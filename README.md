@@ -16,21 +16,23 @@
   <!-- Dil seçim düğmesi -->
   <button class="language-button" id="english-button">English</button>
   <button class="language-button" id="turkish-button">Türkçe</button>
-# İçerik
 
 
+  <!-- İngilizce içerik -->
 
   <div id="english-content">
     <h1>Todo Application</h1>
-    1. [JS_Q&A](https://github.com/ybakyurek/techCareerAssignments/tree/main/JS_Q%26A): JS ile verilen problemler ve çözümleri
-   1. [Q&A.md](https://github.com/ybakyurek/techCareerAssignments/blob/main/JS_Q%26A/Q%26A.md):Markdown dosyası
+    <!-- İngilizce içeriği buraya ekleyin -->
   </div>
-# İçerik
+
+
+  <!-- Türkçe içerik -->
 
   <div id="turkish-content" style="display: none;">
     <h1>Todo Uygulaması</h1>
-   1. [RegistrationForm](https://github.com/ybakyurek/techCareerAssignments/tree/main/RegisterForm): İlk hafta sonunda verilen RegisterForm html, css ve png dosyası
+    <!-- Türkçe içeriği buraya ekleyin -->
   </div>
+
 
   <script>
     // Dil seçim düğmelerini ve içerikleri işleme
@@ -38,6 +40,7 @@
     const turkishButton = document.getElementById('turkish-button');
     const englishContent = document.getElementById('english-content');
     const turkishContent = document.getElementById('turkish-content');
+
 
     englishButton.addEventListener('click', () => {
       englishContent.style.display = 'block';
@@ -48,9 +51,12 @@
       turkishContent.style.display = 'block';
       englishContent.style.display = 'none';
     });
+
   </script>
 </body>
 </html>
+
+
 
 # İçerik
 
