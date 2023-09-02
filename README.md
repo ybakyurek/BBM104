@@ -18,20 +18,18 @@
   <button class="language-button" id="turkish-button">Türkçe</button>
 # İçerik
 
-1. [JS_Q&A](https://github.com/ybakyurek/techCareerAssignments/tree/main/JS_Q%26A): JS ile verilen problemler ve çözümleri
-   1. [Q&A.md](https://github.com/ybakyurek/techCareerAssignments/blob/main/JS_Q%26A/Q%26A.md):Markdown dosyası
+
 
   <div id="english-content">
     <h1>Todo Application</h1>
-    <!-- İngilizce içeriği buraya ekleyin -->
+    1. [JS_Q&A](https://github.com/ybakyurek/techCareerAssignments/tree/main/JS_Q%26A): JS ile verilen problemler ve çözümleri
+   1. [Q&A.md](https://github.com/ybakyurek/techCareerAssignments/blob/main/JS_Q%26A/Q%26A.md):Markdown dosyası
   </div>
 # İçerik
 
-1. [RegistrationForm](https://github.com/ybakyurek/techCareerAssignments/tree/main/RegisterForm): İlk hafta sonunda verilen RegisterForm html, css ve png dosyası
-
   <div id="turkish-content" style="display: none;">
     <h1>Todo Uygulaması</h1>
-    <!-- Türkçe içeriği buraya ekleyin -->
+   1. [RegistrationForm](https://github.com/ybakyurek/techCareerAssignments/tree/main/RegisterForm): İlk hafta sonunda verilen RegisterForm html, css ve png dosyası
   </div>
 
   <script>
